@@ -1,73 +1,101 @@
-{%  load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    {%  block titulo %}
-<title>Modelo</title>
-{%  endblock %}
+    {% block titulo %}
+        <title>Modelo</title>
+    {% endblock %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
+<header>
+    {% block menu %}
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #054e98">
+            <a class="navbar-brand" href="#">
+                <img src="../../../static/img/logo.png" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff">
+                            Empresa
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Cadastrar Vaga</a>
+                            <a class="dropdown-item" href="#">Cadastro Empresa</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff">
+                            Candidato
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Cadastro</a>
+                            <a class="dropdown-item" href="#">Candidatar Vaga</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" style="color: #ffffff">Vagas</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <br>
+            </div>
+            <br>
+
+        </nav>
+    {% endblock %}
+</header>
 <body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
-{%  block menu %}
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark navegacao">
-  <div class="container">
-    <a href="#" class="navbar-brand">
-      <img src="../../static/img/logo.png" height="40">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
-            aria-expanded="false" aria-label="Menu Colapso">
-       <span class="navbar-toggler-icon text-light"></span>
-     </button>
-
-    <div id="menu" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto text-light nav-menu">
-        <li class="nav-item">
-          <a href="#" class="nav-link text-light font-weight-bold">Vagas</a>
-        </li>
-           <li class="nav-item">
-          <a href="" class="nav-link text-light font-weight-bold">
-              Relatórios
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-light font-weight-bold">Cadastro Usuario</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-{%  endblock %}
-
-
-
 <div class="container">
-    {%  block conteudo %}
-    {%  endblock %}
+    <br>
+    <br>
+    {% block conteudo %}
+    {% endblock %}
+    <br>
+    <br>
 </div>
 
-
-
-{%  block rodape %}
-  <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Voltar ao topo</a>
-        </p>
-        <p>Sistema de Vagas.</p>
-      </div>
-    </footer>
-{%  endblock %}
-
-
-
-
-<
 </body>
+{% block rodape %}
+    <footer class="page-footer font-small blue pt-4" style="background-color:  #054e98">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3" style="color: #ffffff">
+                    <h5 class="text-uppercase">Site Nacional de Vagas</h5>
+                    <p>Todas as funcionalidade deste site estão reservadas a profissionais e empresas.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3" style="color: #ffffff">
+                    <h6 class="text-uppercase">Contato</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://github.com/lhggomes">GitHub</a><br>
+                            <a href="https://www.linkedin.com/in/lucas-gomes-161524166/">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3" style="color: #ffffff">© 2020 Copyright
+        </div>
+    </footer>
+{% endblock %}
 </html>

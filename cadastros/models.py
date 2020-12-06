@@ -24,7 +24,7 @@ class Vaga(Model):
 
 class Candidato(Model):
     nome = CharField(max_length=100)
-    email = EmailField()
+    email = EmailField(primary_key=True)
 
 
 class Candidatura(Model):
