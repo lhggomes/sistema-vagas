@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import CandidatoCreate, VagaCreate
+from .views import CandidatoCreate, VagaCreate, CandidaturaCrate
 
 urlpatterns = [
-   path('cadastrar/candidato/', CandidatoCreate.as_view(), name="cad-candidato"),
-   path('cadastrar/vaga/', VagaCreate.as_view(), name="cad-vaga"),
+  path('cadastrar/candidato/', CandidatoCreate.as_view(), name="cad-candidato"),
+  path('cadastrar/vaga/', VagaCreate.as_view(), name="cad-vaga"),
+  path('cadastrar/candidatura', CandidaturaCrate.as_view(), name="cad-candidatura")
 ]

@@ -1,14 +1,15 @@
 from django.db.models import Model, CharField, FloatField, TextField, ForeignKey, EmailField, PROTECT
 
 
-class Empresa(Model):
+class PCEmpresa(Model):
     razao_social = CharField(max_length=255, verbose_name="razão social")
     cnpj = CharField(max_length=14)
 
     def __str__(self):
         return "{} - {}".format(self.razao_social, self.cnpj)
 
-class Vaga(Model):
+
+class PCVaga(Model):
     """
     Vaga Model Class
     """
@@ -16,23 +17,24 @@ class Vaga(Model):
     salario = FloatField()
     requisitos = TextField()
     escolaridade = CharField(max_length=100)
-    empresa = ForeignKey(Empresa, on_delete=PROTECT)
+    empresa = ForeignKey(PCEmpresa, on_delete=PROTECT)
 
     def __str__(self):
         return "{} ({})".format(self.descricao, self.salario)
 
 
-class Candidato(Model):
+class PCCandidato(Model):
     nome = CharField(max_length=100)
-    email = EmailField(primary_key=True)
+    email = EmailField()
 
 
-class Candidatura(Model):
-    candidato = ForeignKey(Candidato, on_delete=PROTECT)
-    vaga = ForeignKey(Vaga, on_delete=PROTECT)
+class PCCandidatura(Model):
     experiencia = CharField(max_length=255, verbose_name="experiência")
     ultima_escolaridade = CharField(max_length=60)
     pretensao_salarial = FloatField(verbose_name="pretensão salarial")
 
+    candidato = ForeignKey(PCCandidato, on_delete=PROTECT)
+    vaga = ForeignKey(PCVaga, on_delete=PROTECT)
+
     def __str__(self):
-        return "{} - {}  - {}".format(self.candidato, self.pretensao_salarial, self.ultima_escolaridade)
+        return "{}  - {}".format(self.pretensao_salarial, self.ultima_escolaridade)
