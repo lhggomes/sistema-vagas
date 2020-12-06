@@ -8,13 +8,39 @@
 <title>Modelo</title>
 {%  endblock %}
 
-    <link rel="stylesheet" href="{%  static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 {%  block menu %}
-<div class="bg-light">
-</div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark navegacao">
+  <div class="container">
+    <a href="#" class="navbar-brand">
+      <img src="../../static/img/logo.png" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+            aria-expanded="false" aria-label="Menu Colapso">
+       <span class="navbar-toggler-icon text-light"></span>
+     </button>
+
+    <div id="menu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto text-light nav-menu">
+        <li class="nav-item">
+          <a href="#header" class="nav-link text-light font-weight-bold">Vagas</a>
+        </li>
+           <li class="nav-item">
+          <a href="#" class="nav-link text-light font-weight-bold">Relatórios</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-light font-weight-bold">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 {%  endblock %}
 
 
@@ -29,11 +55,11 @@
 {%  block rodape %}
 <div class="bg-light">
 
+
 </div>
 {%  endblock %}
 
-<script src="{% static 'jquery-3.5.1.min.js' %}"></script>
-<script src="{% static 'bootstrap.min.js' %}"></script>
+
 
 
 <
