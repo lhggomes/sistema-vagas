@@ -1,4 +1,4 @@
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import PCEmpresa, PCVaga, PCCandidato, PCCandidatura
 
@@ -27,5 +27,14 @@ class EmpresaCreate(CreateView):
 class CandidaturaCrate(CreateView):
     model = PCCandidatura
     fields = ['candidato', 'vaga', 'experiencia', 'ultima_escolaridade', 'pretensao_salarial']
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
+
+
+# For Updating the values
+
+class VagaUpdate(UpdateView):
+    model = PCVaga
+    fields = ['descricao', 'salario', 'requisitos', 'escolaridade', 'empresa']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('index')
