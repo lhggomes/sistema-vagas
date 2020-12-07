@@ -10,9 +10,6 @@ class PCEmpresa(Model):
 
 
 class PCVaga(Model):
-    """
-    Vaga Model Class
-    """
     descricao = CharField(max_length=100, verbose_name="descrição")
     salario = FloatField()
     requisitos = TextField()
@@ -28,13 +25,18 @@ class PCCandidato(Model):
     email = EmailField()
 
 
+class PCEscolaridade(Model):
+    descricao = CharField(max_length=80)
+
+
 class PCCandidatura(Model):
     experiencia = CharField(max_length=255, verbose_name="experiência")
-    ultima_escolaridade = CharField(max_length=60)
     pretensao_salarial = FloatField(verbose_name="pretensão salarial")
 
+    ultima_escolaridade = ForeignKey(PCEscolaridade, on_delete=PROTECT)
     candidato = ForeignKey(PCCandidato, on_delete=PROTECT)
     vaga = ForeignKey(PCVaga, on_delete=PROTECT)
 
     def __str__(self):
         return "{}  - {}".format(self.pretensao_salarial, self.ultima_escolaridade)
+
