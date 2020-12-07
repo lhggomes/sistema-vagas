@@ -28,8 +28,8 @@
                             Empresa
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Cadastrar Vaga</a>
-                            <a class="dropdown-item" href="#">Cadastro Empresa</a>
+                            <a class="dropdown-item" href="{% url 'cad-vaga' %}">Cadastrar Vaga</a>
+                            <a class="dropdown-item" href="{% url 'cad-empresa' %}">Cadastro Empresa</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -38,8 +38,8 @@
                             Candidato
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Cadastro</a>
-                            <a class="dropdown-item" href="#">Candidatar Vaga</a>
+                            <a class="dropdown-item" href="{% url 'cad-candidato' %}">Cadastro</a>
+                            <a class="dropdown-item" href="{% url 'cad-candidatura'%}">Candidatar Vaga</a>
                         </div>
                     </li>
                     <li class="nav-item">
