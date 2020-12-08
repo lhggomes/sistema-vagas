@@ -3,21 +3,23 @@
 {% load crispy_forms_tags %}
 
 
-{%  block titulo %}
+{% block titulo %}
     <title>inclusao:: vagas</title>
 {% endblock %}
 
 
 {% block conteudo %}
-    <h3>Inclusão de Novo Registro</h3>
-    <p class="lead">
-        Por favor, preencha os campos para prosseguir com o cadastro..
-    </p>
+    <section id="hero" class="main">
+    <div>
+        <h3>Inclusão de Novo Registro</h3>
+        <p>
+            Por favor, informe todos dados necessários para cadastro..
+        </p>
+    </div>
     <hr>
-
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form|crispy }}
+        {{ form| crispy }}
 
         <hr class="mt-4">
         <button type="submit" class="btn btn-light">
@@ -25,4 +27,9 @@
         </button>
 
     </form>
+
+    </section>
+
+
+
 {% endblock %}
