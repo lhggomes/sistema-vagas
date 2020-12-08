@@ -38,6 +38,7 @@ class PCFaixaSalarial(Model):
     def __str__(self):
         return f'{self.descricao}'
 
+
 class PCCandidatura(Model):
     experiencia = CharField(max_length=255, verbose_name="experiência")
 
@@ -48,6 +49,3 @@ class PCCandidatura(Model):
 
     def __str__(self):
         return "{}  - {}".format(self.pretensao_salarial, self.ultima_escolaridade)
-
-
-
