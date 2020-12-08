@@ -10,17 +10,14 @@
 
 {% block conteudo %}
     <section id="hero" class="main">
-    <div>
         <h3>Inclusão de Novo Registro</h3>
         <p>
             Por favor, informe todos dados necessários para cadastro..
         </p>
-    </div>
     <hr>
-    <form action="" method="POST">
+    <form action="" method="POST" class="form-group">
         {% csrf_token %}
-        {{ form| crispy }}
-
+        {{ form|crispy }}
         <hr class="mt-4">
         <button type="submit" class="btn btn-light">
             Cadastrar
