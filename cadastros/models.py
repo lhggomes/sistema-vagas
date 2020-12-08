@@ -32,10 +32,16 @@ class PCEscolaridade(Model):
         return f"{self.descricao}"
 
 
+class PCFaixaSalarial(Model):
+    descricao = CharField(max_length=100, verbose_name="descrição")
+
+    def __str__(self):
+        return f'{self.descricao}'
+
 class PCCandidatura(Model):
     experiencia = CharField(max_length=255, verbose_name="experiência")
-    pretensao_salarial = FloatField(verbose_name="pretensão salarial")
 
+    pretensao_salarial = ForeignKey(PCFaixaSalarial, on_delete=PROTECT)
     ultima_escolaridade = ForeignKey(PCEscolaridade, on_delete=PROTECT)
     candidato = ForeignKey(PCCandidato, on_delete=PROTECT)
     vaga = ForeignKey(PCVaga, on_delete=PROTECT)
@@ -44,8 +50,4 @@ class PCCandidatura(Model):
         return "{}  - {}".format(self.pretensao_salarial, self.ultima_escolaridade)
 
 
-class PCFaixaSalarial(Model):
-    descricao = CharField(max_length=100, verbose_name="descrição")
 
-    def __str__(self):
-        return f'{self.descricao}'
