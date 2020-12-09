@@ -1,0 +1,35 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block titulo %}
+    <title>excluir registro:: vagas</title>
+{% endblock %}
+
+
+{% block conteudo %}
+    <section id="hero" class="main">
+        <h3>Exclusão de Registros</h3>
+        <p>
+            Por favor, conforme os registros que se deseja realizar a exclusão..
+        </p>
+    <hr>
+    <form action="" method="POST" class="form-group">
+        <p>
+            Deseja excluir o registro: <b>{{ object }}</b>
+        </p>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <hr class="mt-4">
+        <button type="submit" class="btn btn-danger">
+            Excluir
+        </button>
+
+    </form>
+
+    </section>
+
+
+
+{% endblock %}
