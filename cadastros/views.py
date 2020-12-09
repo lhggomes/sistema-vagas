@@ -1,9 +1,12 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+
 from django.urls import reverse_lazy
 from .models import PCEmpresa, PCVaga, PCCandidato, PCCandidatura
 
 
+# Create Views
 class VagaCreate(CreateView):
     model = PCVaga
     fields = ['descricao', 'salario', 'requisitos', 'escolaridade', 'empresa']
@@ -48,12 +51,12 @@ class VagaDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
-
 class VagaList(ListView):
     model = PCVaga
     template_name = 'cadastros/listas/vaga.html'
 
 
-class CandidaturaList(ListView):
+class CandidaturaView(DetailView):
     model = PCCandidatura
     template_name = 'cadastros/listas/vaga-info.html'
+
