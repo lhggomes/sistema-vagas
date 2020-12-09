@@ -44,12 +44,18 @@
                         <ul>
                             <li><a href="{% url 'cad-empresa' %}">Cadastro de empresa</a></li>
                             <li><a href="{% url 'cad-vaga' %}">Cadastro de vagas</a></li>
+
                         </ul>
                     </li>
                     <li class="drop-down"><a href="">Candidato</a>
                         <ul>
                             <li><a href="{% url 'cad-candidato' %}">Meu cadastro</a></li>
                             <li><a href="{% url 'cad-candidatura' %}">Candidatar</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop-down"><a href="">Relatorios</a>
+                        <ul>
+                            <li><a href="{% url 'listar-candidaturas' %}">Vaga / Candidatos</a></li>
                         </ul>
                     </li>
                     <li><a href="#contact">Contato</a></li>
@@ -66,6 +72,12 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+{% block main %}
+    <section>
+
+    </section>
+{% endblock %}
 
 <main>
     <div class="col-md-6 offset-md-3">

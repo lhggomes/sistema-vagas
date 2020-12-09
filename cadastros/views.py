@@ -52,3 +52,8 @@ class VagaDelete(DeleteView):
 class VagaList(ListView):
     model = PCVaga
     template_name = 'cadastros/listas/vaga.html'
+
+
+class CandidaturaList(ListView):
+    model = PCCandidatura
+    template_name = 'cadastros/listas/vaga-info.html'

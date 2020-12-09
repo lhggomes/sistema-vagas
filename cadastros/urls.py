@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import CandidatoCreate, VagaCreate, CandidaturaCrate, VagaUpdate, EmpresaCreate
 from .views import VagaDelete
-from .views import VagaList
+from .views import VagaList, CandidaturaList
 
 urlpatterns = [
     path('cadastrar/candidato/', CandidatoCreate.as_view(), name="cad-candidato"),
@@ -14,5 +14,6 @@ urlpatterns = [
     path('excluir/vaga/<int:pk>', VagaDelete.as_view(), name="excluir-vaga"),
 
     path('listar/vagas/', VagaList.as_view(), name="listar-vagas"),
+    path('listar/candidaturas', CandidaturaList.as_view(), name="listar-candidaturas")
 
 ]
