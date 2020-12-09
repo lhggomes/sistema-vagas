@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from .models import PCEmpresa, PCVaga, PCCandidato, PCCandidatura
 
@@ -40,7 +41,13 @@ class VagaUpdate(UpdateView):
     success_url = reverse_lazy('index')
 
 
+# For Deleting values
 class VagaDelete(DeleteView):
     model = PCVaga
     template_name = 'cadastros/form-excluir.html'
     success_url = reverse_lazy('index')
+
+
+class VagaList(ListView):
+    model = PCVaga
+    template_name = 'cadastros/listas/campo.html'
