@@ -1,0 +1,52 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+    <title>Vagas em aberto :: vagas</title>
+{% endblock %}
+
+{% block conteudo %}
+    <section id="hero" class="main">
+        <h3>Lista de Vagas registradas</h3>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Descricao</th>
+                    <th>Empresa</th>
+                    <th>Escolaridade</th>
+                    <th>Requisitos</th>
+                    <th>Salario</th>
+
+                    <th>Opções</th>
+                </tr>
+                {% for vaga in object_list %}
+                    <tr>
+                        <td>{{ vaga.descricao }}</td>
+                        <td>{{ vaga.empresa }}</td>
+                        <td>{{ vaga.escolaridade }}</td>
+                        <td>{{ vaga.requisitos }}</td>
+                        <td>{{ vaga.salario }}</td>
+
+                        <td>
+                            <a href="{% url 'editar-vaga' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                            <a href="{% url 'excluir-vaga' vaga.pk %}" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6">Nenhum vaga registrada</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </section>
+
+{% endblock %}

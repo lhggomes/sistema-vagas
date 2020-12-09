@@ -48,6 +48,7 @@ class VagaDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
+
 class VagaList(ListView):
     model = PCVaga
-    template_name = 'cadastros/listas/campo.html'
+    template_name = 'cadastros/listas/vaga.html'
