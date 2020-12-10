@@ -39,19 +39,19 @@ Usage Example
 The website is also intuitive, so here some screenshots:
 
 1) Main Web: 
-<img src="/docs/img/main.png">
+<img src="/doc/img/main.png">
 
 2) Candidatura: 
-<img src="/docs/img/candidatura.png">
+<img src="/doc/img/candidatura.png">
 
 3) Vagas: 
-<img src="/docs/img/vagas.png">
+<img src="/doc/img/vagas.png">
 
 4) Primeiros Passos: 
-<img src="/docs/img/primeiros-passos.png">
+<img src="/doc/img/primeiros-passos.png">
 
 5) Sobre: 
-<img src="/docs/img/sobre.png">
+<img src="/doc/img/sobre.png">
 
 
 Documentation
