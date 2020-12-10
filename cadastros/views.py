@@ -81,4 +81,3 @@ class CandidaturaView(DetailView):
     model = PCCandidatura
     template_name = 'cadastros/listas/vaga-info.html'
 
-
