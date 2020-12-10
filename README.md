@@ -3,21 +3,6 @@
 This a web project done using Python and Django for development. 
 Here are some step to configure the project in your local machine
 
-Table of Contents
------------------
-
--  `Getting Started <#getting-started>`__
--  `Installing <#installing>`__
-
-   -  `From source <#from-source>`__
-
--  `Usage Example <#usage-example>`__
--  `Documentation <#documentation>`__
--  `Built With <#built-with>`__
--  `Versioning <#versioning>`__
--  `Authors <#authors>`__
--  `License <#license>`__
-
 Getting Started
 ---------------
 
@@ -28,8 +13,6 @@ Installing
 ----------
 You also need to clone the repository in your local machine (with python, and Django installed before).
 Using: 
-
-.. code:: bash
 
     git clone https://github.com/lhggomes/vagas.git
 
@@ -53,9 +36,6 @@ The website is also intuitive, so here some screenshots:
 5) Sobre: 
 <img src="/doc/img/sobre.png">
 
-
-Documentation
-----------
 
 Built With
 ----------
