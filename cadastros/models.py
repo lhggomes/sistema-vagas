@@ -6,14 +6,14 @@ class PCEmpresa(Model):
     cnpj = CharField(max_length=14)
 
     def __str__(self):
-        return "{} - {}".format(self.razao_social, self.cnpj)
+        return f'{self.razao_social} - {self.cnpj}'
 
 
 class PCEscolaridade(Model):
     descricao = CharField(max_length=80)
 
     def __str__(self):
-        return f"{self.descricao}"
+        return f'{self.descricao}'
 
 
 class PCVaga(Model):
@@ -25,12 +25,15 @@ class PCVaga(Model):
     empresa = ForeignKey(PCEmpresa, on_delete=PROTECT)
 
     def __str__(self):
-        return "{} ({})".format(self.descricao, self.salario)
+        return f'{self.descricao} - {self.empresa.razao_social}'
 
 
 class PCCandidato(Model):
     nome = CharField(max_length=100)
     email = EmailField()
+
+    def __str__(self):
+        return f'{self.nome} - {self.email}'
 
 
 class PCFaixaSalarial(Model):
@@ -49,4 +52,4 @@ class PCCandidatura(Model):
     vaga = ForeignKey(PCVaga, on_delete=PROTECT)
 
     def __str__(self):
-        return "{}  - {}".format(self.pretensao_salarial, self.ultima_escolaridade)
+        return f'{self.candidato.nome} - {self.vaga.descricao}'

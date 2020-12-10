@@ -14,16 +14,14 @@
         <table class="table table-striped">
                 <tr>
                     <th>Nome Candidato</th>
-                    <th>Escolaridade</th>
+                    <th>Email</th>
 
                 </tr>
-                {% for vaga in object_list %}
+                {% for candidato in object_list %}
                     <tr>
-                        <td>{{ vaga.descricao }}</td>
-                        <td>{{ vaga.empresa }}</td>
-                        <td>{{ vaga.escolaridade }}</td>
-                        <td>{{ vaga.requisitos }}</td>
-                        <td>{{ vaga.salario }}</td>
+                        <td>{{ candidato.nome }}</td>
+                        <td>{{ candidato.email }}</td>
+
 
                         <td>
                             <a href="{% url 'editar-vaga' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">
