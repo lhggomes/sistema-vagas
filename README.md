@@ -1,4 +1,7 @@
-# Gerenciamento de Vagas
+# Vagas Website
+
+This a web project done using Python and Django for development. 
+Here are some step to configure the project in your local machine
 
 Table of Contents
 -----------------
@@ -23,9 +26,33 @@ your local machine.
 
 Installing
 ----------
+You also need to clone the repository in your local machine (with python, and Django installed before).
+Using: 
+
+.. code:: bash
+
+    git clone https://github.com/lhggomes/vagas.git
 
 Usage Example
 ----------
+
+The website is also intuitive, so here some screenshots:
+
+1) Main Web: 
+<img src="/docs/img/main.png">
+
+2) Candidatura: 
+<img src="/docs/img/candidatura.png">
+
+3) Vagas: 
+<img src="/docs/img/vagas.png">
+
+4) Primeiros Passos: 
+<img src="/docs/img/primeiros-passos.png">
+
+5) Sobre: 
+<img src="/docs/img/sobre.png">
+
 
 Documentation
 ----------
@@ -34,7 +61,7 @@ Built With
 ----------
 
 - Python 3.8
-- Django 2.2+
+- Django 3.1+
 - SQLLite
 
 Versioning
