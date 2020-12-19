@@ -1,0 +1,50 @@
+{% extends 'paginas/administrador.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block titulo-pagina %}
+    <title>Dashboard :: Visualizacao Vagas</title>
+{% endblock %}
+
+{% block conteudo-geral %}
+    <section id="hero" class="main">
+        <h3>Essas são as vagas registradas no sistema..</h3>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Descricao</th>
+                    <th>Empresa</th>
+                    <th>Escolaridade</th>
+                    <th>Requisitos</th>
+                    <th>Salario</th>
+
+                    <th>Opções</th>
+                </tr>
+                {% for vaga in object_list %}
+                    <tr>
+                        <td>{{ vaga.descricao }}</td>
+                        <td>{{ vaga.empresa }}</td>
+                        <td>{{ vaga.escolaridade }}</td>
+                        <td>{{ vaga.requisitos }}</td>
+                        <td>{{ vaga.salario }}</td>
+
+                        <td>
+                            <a href="{% url 'editar-vaga' vaga.pk %}" class="icon-fixed-width icon-pencil" title="Editar"></a>
+                            <a href="{% url 'excluir-vaga' vaga.pk %}" class="icon-fixed-width icon-trash" title="Excluir"> </a>
+                            <a href="{% url 'listar-cand-vagas' vaga.pk %}" class="icon-fixed-width icon-book" title="Relatorios"></a>
+
+                        </td>
+
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6">Nenhum vaga registrada</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </section>
+
+{% endblock %}
