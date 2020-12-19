@@ -84,5 +84,9 @@ class CandidaturaView(DetailView):
 
 class VagasDashboardView(ListView):
     model = PCVaga
-    template_name = 'cadastros/listas/vagas-dashboard.html'
+    template_name = 'cadastros/dashboard/vagas.html'
 
+
+class CandidatoDashboardView(ListView):
+    model = PCCandidato
+    template_name = 'cadastros/dashboard/candidatos.html'
