@@ -15,3 +15,7 @@ class VagaView(TemplateView):
 
 class PrimeirosPassosView(TemplateView):
     template_name = 'paginas/primeiros.html'
+
+
+class DashboardView(TemplateView):
+    template_name = 'paginas/administrador.html'
