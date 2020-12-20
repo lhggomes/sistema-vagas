@@ -2,7 +2,7 @@ from django.urls import path
 from .views import CandidatoCreate, VagaCreate, CandidaturaCrate, VagaUpdate, EmpresaCreate
 from .views import VagaDelete
 from .views import VagaList, CandidaturaView, VagasDashboardView, CandidatoDashboardView
-from .views import vagas_por_mes
+from .views import pie_chart
 
 urlpatterns = [
     path('cadastrar/candidato/', CandidatoCreate.as_view(), name="cad-candidato"),
@@ -16,6 +16,6 @@ urlpatterns = [
     path('listar/informacao/vaga/<int:pk>', CandidaturaView.as_view(), name="listar-cand-vagas"),
     path('empresa/dashboard/vagas/', VagasDashboardView.as_view(), name="vagas-dashboard"),
     path('empresa/dashboard/candidatos', CandidatoDashboardView.as_view(), name='candidato-dashboard'),
-    path('empresa/dashboard/grafico', vagas_por_mes, name='vagas-mes')
+    path('empresa/dashboard/grafico', pie_chart, name='vagas-mes')
 
 ]

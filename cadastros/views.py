@@ -1,4 +1,4 @@
-import json
+from calendar import month_name
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -93,12 +93,20 @@ class CandidatoDashboardView(ListView):
     template_name = 'cadastros/dashboard/candidatos.html'
 
 
-def vagas_por_mes(request):
+def pie_chart(request):
+    labels = []
     queryset = PCVaga.objects.all()
-    datas = [str(obj.data_criacao) for obj in queryset]
+    data_dict = {(int(data.data_criacao.month)): 0 for data in queryset}
 
-    context = {
-        'data_cr': json.dumps(datas)
-    }
+    for data in queryset:
+        data_dict[(int(data.data_criacao.month))] = + data_dict[(int(data.data_criacao.month))] + 1
 
-    return render(request, 'cadastros/graficos/vagas.html', context)
+    data_list = []
+    for key, data in data_dict.items():
+        labels.append(month_name[key])
+        data_list.append(data)
+
+    return render(request, 'cadastros/graficos/vagas.html', {
+        'labels': labels,
+        'data': data_list,
+    })
