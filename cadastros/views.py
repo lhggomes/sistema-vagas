@@ -114,7 +114,7 @@ def pie_chart(request):
 
 def pie_char_candidate(request):
     labels = []
-    queryset = PCCandidato.objects.all()
+    queryset = PCCandidatura.objects.all()
     data_dict = {(int(data.data_criacao.month)): 0 for data in queryset}
 
     for data in queryset:
