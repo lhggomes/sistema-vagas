@@ -19,16 +19,15 @@
 {% block js-script %}
     <script>
         var ctx = document.getElementById("vagasChart");
-        var names = JSON.parse('{{ names|safe }}');
-        var prices = JSON.parse('{{ prices|safe }}');
+        var data_cr = JSON.parse('{{ data_cr |safe }}');
 
         var vagasChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: names,
+                labels: 'Datas',
                 datasets: [{
-                    label: 'Produtos',
-                    data: prices,
+                    label: 'Datas',
+                    data: data_cr,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

@@ -1,7 +1,8 @@
+import json
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from .models import PCEmpresa, PCVaga, PCCandidato, PCCandidatura
 
@@ -90,3 +91,14 @@ class VagasDashboardView(ListView):
 class CandidatoDashboardView(ListView):
     model = PCCandidato
     template_name = 'cadastros/dashboard/candidatos.html'
+
+
+def vagas_por_mes(request):
+    queryset = PCVaga.objects.all()
+    datas = [str(obj.data_criacao) for obj in queryset]
+
+    context = {
+        'data_cr': json.dumps(datas)
+    }
+
+    return render(request, 'cadastros/graficos/vagas.html', context)
