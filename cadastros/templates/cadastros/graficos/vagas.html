@@ -22,7 +22,7 @@
         var data_cr = JSON.parse('{{ data_cr |safe }}');
 
         var vagasChart = new Chart(ctx, {
-            type: 'line',
+            type: 'pie',
             data: {
                 labels: data_cr,
                 datasets: [{
