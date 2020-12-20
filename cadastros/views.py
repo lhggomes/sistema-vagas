@@ -110,3 +110,22 @@ def pie_chart(request):
         'labels': labels,
         'data': data_list,
     })
+
+
+def pie_char_candidate(request):
+    labels = []
+    queryset = PCCandidato.objects.all()
+    data_dict = {(int(data.data_criacao.month)): 0 for data in queryset}
+
+    for data in queryset:
+        data_dict[(int(data.data_criacao.month))] = + data_dict[(int(data.data_criacao.month))] + 1
+
+    data_list = []
+    for key, data in data_dict.items():
+        labels.append(month_name[key])
+        data_list.append(data)
+
+    return render(request, 'cadastros/graficos/candidatos.html', {
+        'labels': labels,
+        'data': data_list,
+    })

@@ -1,0 +1,55 @@
+{% extends 'paginas/administrador.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block titulo-pagina %}
+    <title>Dashboard :: Vis.Info. Vaga</title>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+{% endblock %}
+
+
+{% block conteudo %}
+    <h2 class="title">Candidatos por mês</h2>
+    <p class="lead">
+    Os dados foram gerados com base nos usuários que foram cadastrados no sistema
+    </p>
+    <div class="bx-pie-chart align-content-center"  style="width: 75%;">
+        <canvas id="pie-chart"></canvas>
+    </div>
+
+{% endblock %}
+
+{% block js-script %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+
+        var config = {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: {{ data|safe }},
+                    backgroundColor: [
+                        '#2ECC71', '#EB984E', '#45B39D', '#B03A2E', '#AAB7B8'
+                    ],
+                    label: 'Meses'
+                }],
+                labels: {{ labels|safe }}
+            },
+            options: {
+                responsive: true
+            }
+        };
+
+        window.onload = function () {
+            var ctx = document.getElementById('pie-chart').getContext('2d');
+            window.myPie = new Chart(ctx, config);
+        };
+
+    </script>
+
+{% endblock %}
+
