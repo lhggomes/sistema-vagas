@@ -1,4 +1,5 @@
-from django.db.models import Model, CharField, FloatField, TextField, ForeignKey, EmailField, PROTECT
+import datetime
+from django.db.models import Model, CharField, FloatField, TextField, ForeignKey, EmailField, DateField, PROTECT
 
 
 class PCEmpresa(Model):
@@ -20,9 +21,11 @@ class PCVaga(Model):
     descricao = CharField(max_length=100, verbose_name="descrição")
     salario = FloatField()
     requisitos = TextField()
+    data_criacao = DateField(default=datetime.date.today)
 
     escolaridade = ForeignKey(PCEscolaridade, on_delete=PROTECT)
     empresa = ForeignKey(PCEmpresa, on_delete=PROTECT)
+
 
     def __str__(self):
         return f'{self.descricao} - {self.empresa.razao_social}'
@@ -32,6 +35,7 @@ class PCCandidato(Model):
     nome = CharField(max_length=100)
     email = EmailField()
 
+    data_criacao = DateField(default=datetime.date.today)
     def __str__(self):
         return f'{self.nome} - {self.email}'
 
@@ -45,6 +49,7 @@ class PCFaixaSalarial(Model):
 
 class PCCandidatura(Model):
     experiencia = CharField(max_length=255, verbose_name="experiência")
+    data_criacao = DateField(default=datetime.date.today)
 
     pretensao_salarial = ForeignKey(PCFaixaSalarial, on_delete=PROTECT)
     ultima_escolaridade = ForeignKey(PCEscolaridade, on_delete=PROTECT)

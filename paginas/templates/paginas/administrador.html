@@ -47,7 +47,7 @@
 <body>
 <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0 "
-       href="{% url 'index' %}">Visualização de Dashboard
+       href="{% url 'dashboard' %}">Vagas.com Dashboard
     </a>
 </nav>
 
@@ -143,6 +143,9 @@
     const feather = require("../../../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp");
     feather.replace()
 </script>
+
+{% block js-script %}
+{% endblock %}
 
 
 </body>
