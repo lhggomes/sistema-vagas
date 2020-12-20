@@ -14,9 +14,10 @@
 {% block conteudo %}
     <h2 class="title">Vagas criadas por mês</h2>
     <p class="lead">
-    Os dados foram gerados com base nas vagas que foram cadastradas no sistema de vagas...
+        Os dados foram gerados com base nas vagas que foram cadastradas no sistema de vagas...
     </p>
-    <div class="bx-pie-chart align-content-center"  style="width: 75%;">
+    <hr>
+    <div class="bx-pie-chart align-content-center" style="width: 75%;">
         <canvas id="pie-chart"></canvas>
     </div>
 
@@ -40,7 +41,11 @@
                 labels: {{ labels|safe }}
             },
             options: {
-                responsive: true
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Vagas Criadas por Mês'
+                }
             }
         };
 

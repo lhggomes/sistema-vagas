@@ -16,6 +16,7 @@
     <p class="lead">
     Os dados foram gerados com base nas candidaturas que foram realizadas no sistema.
     </p>
+    <hr>
     <div class="bx-pie-chart align-content-center"  style="width: 75%;">
         <canvas id="pie-chart"></canvas>
     </div>
@@ -40,7 +41,11 @@
                 labels: {{ labels|safe }}
             },
             options: {
-                responsive: true
+                responsive: true,
+                 title: {
+                    display: true,
+                    text: 'Candidatos Recebidos por Mês'
+                }
             }
         };
 

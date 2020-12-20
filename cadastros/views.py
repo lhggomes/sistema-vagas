@@ -78,9 +78,12 @@ class VagaList(ListView):
     template_name = 'cadastros/listas/vaga.html'
 
 
-class CandidaturaView(DetailView):
+class CandidaturaView(ListView):
     model = PCCandidatura
     template_name = 'cadastros/listas/vaga-info.html'
+
+    def get_queryset(self):
+        return super().get_queryset().filter(vaga_id=self.kwargs['vaga_id'])
 
 
 class VagasDashboardView(ListView):

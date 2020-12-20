@@ -15,26 +15,14 @@
                 <tr>
                     <th>Nome Candidato</th>
                     <th>Email</th>
+                    <th>Escolaridade</th>
 
                 </tr>
-                {% for candidato in object_list %}
+                {% for candidatura in object_list %}
                     <tr>
-                        <td>{{ candidato.nome }}</td>
-                        <td>{{ candidato.email }}</td>
-
-
-                        <td>
-                            <a href="{% url 'editar-vaga' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
-                            <a href="{% url 'excluir-vaga' vaga.pk %}" class="btn btn-danger btn-sm" title="Excluir">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
-                            <a href="{% url 'listar-cand-vagas' vaga.pk %}" class="btn btn-danger btn-sm" title="Relatorios">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
-
-                        </td>
+                        <td>{{ candidatura.candidato.nome }}</td>
+                        <td>{{ candidatura.candidato.email }}</td>
+                        <td>{{ candidatura.ultima_escolaridade.descricao }}</td>
 
                     </tr>
                 {% empty %}
