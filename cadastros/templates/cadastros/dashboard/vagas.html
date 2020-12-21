@@ -16,6 +16,7 @@
         <hr>
         <div class="table-responsive">
             <table class="table table-hover">
+                <thead class="thead-dark">
                 <tr>
                     <th>Descricao</th>
                     <th>Empresa</th>
@@ -25,6 +26,9 @@
 
                     <th>Opções</th>
                 </tr>
+
+                </thead>
+
                 {% for vaga in object_list %}
                     <tr>
                         <td>{{ vaga.descricao }}</td>

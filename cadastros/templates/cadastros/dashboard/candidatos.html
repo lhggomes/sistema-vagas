@@ -16,11 +16,13 @@
         <hr>
         <div class="table-responsive">
             <table class="table table-hover">
+                <thead class="thead-dark">
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
 
                 </tr>
+                </thead>
                 {% for candidato in object_list %}
                     <tr>
                         <td>{{ candidato.nome }}</td>
