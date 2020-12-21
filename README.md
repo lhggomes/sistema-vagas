@@ -30,10 +30,18 @@ The website is also intuitive, so here some screenshots:
 3) Vagas: 
 <img src="/doc/img/vagas.png">
 
-4) Primeiros Passos: 
+4) Implementação de Dashboard:
+ <img src="/doc/img/dashboard_options.jpg">
+ 
+5) Visualizao de Graficos
+
+<img src="/doc/img/candidato_mes.jpg">
+ <img src="/doc/img/vaga_mes.jpg">
+
+6) Primeiros Passos: 
 <img src="/doc/img/primeiros-passos.png">
 
-5) Sobre: 
+7) Sobre: 
 <img src="/doc/img/sobre.png">
 
 
