@@ -18,4 +18,4 @@ class PrimeirosPassosView(TemplateView):
 
 
 class DashboardView(TemplateView):
-    template_name = 'paginas/administrador.html'
+    template_name = 'paginas/modelo_dashboard.html'

@@ -96,6 +96,11 @@ class CandidatoDashboardView(ListView):
     template_name = 'cadastros/dashboard/candidatos.html'
 
 
+class CandidaturasListView(ListView):
+    model = PCCandidatura
+    template_name = 'cadastros/dashboard/candidaturas.html'
+
+
 def pie_chart(request):
     labels = []
     queryset = PCVaga.objects.all()
